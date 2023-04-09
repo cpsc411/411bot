@@ -1,0 +1,36 @@
+name: Run tests & linter
+
+on:
+    pull_request:
+        branches:
+            - main
+    workflow_dispatch:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node: [16.x]
+
+        steps:
+            - uses: actions/checkout@v2
+            - name: Install modules with Node ${{ matrix.node }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node }}
+
+            - name: Install packages
+              run: yarn install
+            - name: Compile TypeScript
+              run: yarn build
+            - name: Prettify code
+              uses: creyD/prettier_action@v4.2
+              with:
+                  dry: True
+                  prettier_options: --check **/*.{ts}
+            - name: Run linter
+              run: yarn lint
+            - name: Run tests
+              run: yarn test
