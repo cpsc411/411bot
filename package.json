@@ -1,0 +1,55 @@
+{
+	"name": "bot-starter",
+	"version": "1.1.0",
+	"main": "dist/index.js",
+	"license": "MIT",
+	"engines": {
+		"node": ">= 16.14"
+	},
+	"dependencies": {
+		"@ubccpsc310/bot-base": "1.1.0",
+		"discord.js": "^14.9.0",
+		"dotenv": "^16.0.3"
+	},
+	"devDependencies": {
+		"@tsconfig/node14": "^1.0.3",
+		"@types/dotenv": "^8.2.0",
+		"@types/node": "^18.15.11",
+		"@typescript-eslint/eslint-plugin": "^5.57.1",
+		"@typescript-eslint/parser": "^5.57.1",
+		"eslint": "^8.38.0",
+		"husky": ">=6",
+		"lint-staged": ">=10",
+		"nodemon": "2.0.22",
+		"prettier": "^2.8.7",
+		"ts-node": "10.9.1",
+		"typescript": "5.0.4"
+	},
+	"scripts": {
+		"build": "tsc",
+		"fix": "yarn lint --fix",
+		"lint": "eslint src --ext .ts",
+		"start": "ts-node src/App.ts",
+		"watch": "nodemon",
+		"prepare": "husky install"
+	},
+	"nodemonConfig": {
+		"ignore": [
+			".git",
+			"node_modules"
+		],
+		"watch": [
+			"src"
+		],
+		"exec": "yarn start",
+		"ext": ".ts"
+	},
+	"lint-staged": {
+		"*.{yml,md,json,ts,js,html}": "prettier --write"
+	},
+	"prettier": {
+		"useTabs": true,
+		"printWidth": 120,
+		"bracketSpacing": false
+	}
+}
