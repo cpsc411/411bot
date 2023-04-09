@@ -34,7 +34,7 @@ jobs:
                   push: false
             - name: Clean up old containers
               run: |
-                  ids=$(docker ps -a | awk -v i="^$1.*" '{if($2~"bot"){print$1}}')
+                  ids=$(docker ps -a | awk -v i="^$1.*" '{if($2~"bot411"){print$1}}')
                   for id in $ids
                   do
                    echo "$id"
@@ -42,7 +42,7 @@ jobs:
                   done
             - name: Clean up old images
               run: |
-                  ids=$(docker images -q --filter reference=bot --filter before=bot411:${{ github.sha }})
+                  ids=$(docker images -q --filter reference=bot411 --filter before=bot411:${{ github.sha }})
                   for id in $ids
                   do
                    echo "$id"
