@@ -5,6 +5,6 @@
 		"strict": false,
 		"types": ["node"]
 	},
-	"include": ["src"],
+	"include": ["src", "jest"],
 	"exclude": ["node_modules"]
 }
