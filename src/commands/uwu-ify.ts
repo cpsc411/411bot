@@ -7,7 +7,7 @@ const uwuify: Command = {
 	usage: "uwu-ify <message>?",
 	async procedure(client: Client, message: Message, args: string[]): Promise<Message> {
 		if (!args.length) {
-			return message.channel.send(`(let ([uwu "uwu"])\n  (format ~a uwu))`);
+			return message.channel.send(`\`\`\`lisp\n` + `(let ([uwu "uwu"])\n` + `  (format ~a uwu))\n\`\`\``);
 		}
 
 		const binding_map = args.reduce((acc, curr) => {
@@ -30,10 +30,12 @@ const uwuify: Command = {
 		);
 
 		return message.channel.send(
-			binding_info.str +
+			`\`\`\`lisp\n` +
+				binding_info.str +
 				`\n${`  `.repeat(binding_info.line_number)}` +
 				`(format "${"~a ".repeat(binding_info.line_number).trim()}" ${Object.values(binding_map).join(" ")})` +
-				`)`.repeat(binding_info.line_number)
+				`)`.repeat(binding_info.line_number) +
+				`\n\`\`\``
 		);
 	},
 };
