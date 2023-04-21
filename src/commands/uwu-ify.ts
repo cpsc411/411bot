@@ -3,7 +3,7 @@ import {Client, Message} from "discord.js";
 
 const uwuify = (args: string[]): string => {
 	if (!args.length) {
-		return `(let ([uwu "uwu"])\n` + `  (format ~a uwu))`;
+		return `(let ([uwu "uwu"])\n` + `  (format "~a" uwu))`;
 	}
 
 	const binding_map = args.reduce((acc, curr) => {

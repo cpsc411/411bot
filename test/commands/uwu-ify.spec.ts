@@ -3,7 +3,7 @@ import {uwuify} from "../../src/commands/uwu-ify";
 describe("uwu-ify", () => {
 	describe("uwuify", () => {
 		it("should return the default program if no arguments are given to compile", () =>
-			expect(uwuify([])).toEqual('(let ([uwu "uwu"])\n  (format ~a uwu))'));
+			expect(uwuify([])).toEqual('(let ([uwu "uwu"])\n  (format "~a" uwu))'));
 
 		it("should compile arguments to a more human readable format", () =>
 			expect(
