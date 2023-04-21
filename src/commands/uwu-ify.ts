@@ -18,7 +18,8 @@ const uwuify: Command = {
 			(acc, curr) => {
 				return {
 					str:
-						`${acc.str}${acc.newline ? `\n` : ``}` +
+						acc.str +
+						`${acc.newline ? `\n` : ``}` +
 						`${`  `.repeat(acc.line_number)}` +
 						`(let ([${binding_map[curr]} "${curr}"])`,
 					newline: true,
