@@ -37,7 +37,7 @@
 		"watch": "nodemon",
 		"prepare": "husky install",
 		"pretty": "prettier --check **/*.{yml,md,json,ts,js}",
-		"test": "echo Add a testing script you fool!"
+		"test": "jest"
 	},
 	"nodemonConfig": {
 		"ignore": [
@@ -57,5 +57,12 @@
 		"useTabs": true,
 		"printWidth": 120,
 		"bracketSpacing": false
+	},
+	"jest": {
+		"preset": "ts-jest",
+		"testEnvironment": "node",
+		"testPathIgnorePatterns": [
+			"/dist/"
+		]
 	}
 }
