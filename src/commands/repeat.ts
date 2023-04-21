@@ -19,7 +19,7 @@ const repeat = (args: string[]): string => {
 
 const usage = "usage: !repeat <positive number> <repeated word> <message>";
 
-const uwuify_command: Command = {
+const repeat_command: Command = {
 	name: "repeat",
 	description:
 		"repeats the second word a user inputted number of times concatenated with the rest of the message unaltered",
@@ -30,4 +30,4 @@ const uwuify_command: Command = {
 };
 
 export {repeat, usage};
-export default uwuify_command;
+export default repeat_command;
