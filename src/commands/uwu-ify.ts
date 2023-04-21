@@ -20,7 +20,7 @@ const uwuify: Command = {
 					str:
 						acc.str +
 						`${acc.newline ? `\n` : ``}` +
-						`${`  `.repeat(acc.line_number)}` +
+						`  `.repeat(acc.line_number) +
 						`(let ([${binding_map[curr]} "${curr}"])`,
 					newline: true,
 					line_number: ++acc.line_number,
@@ -32,8 +32,10 @@ const uwuify: Command = {
 		return message.channel.send(
 			`\`\`\`lisp\n` +
 				binding_info.str +
-				`\n${`  `.repeat(binding_info.line_number)}` +
-				`(format "${"~a ".repeat(binding_info.line_number).trim()}" ${Object.values(binding_map).join(" ")})` +
+				`\n` +
+				`  `.repeat(binding_info.line_number) +
+				`(format "${"~a ".repeat(binding_info.line_number).trim()}"` +
+				Object.values(binding_map).join(" ") +
 				`)`.repeat(binding_info.line_number) +
 				`\n\`\`\``
 		);
