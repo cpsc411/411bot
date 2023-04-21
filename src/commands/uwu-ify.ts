@@ -34,8 +34,9 @@ const uwuify: Command = {
 				binding_info.str +
 				`\n` +
 				`  `.repeat(binding_info.line_number) +
-				`(format "${"~a ".repeat(binding_info.line_number).trim()}"` +
+				`(format "${"~a ".repeat(binding_info.line_number).trim()}" ` +
 				Object.values(binding_map).join(" ") +
+				`)` +
 				`)`.repeat(binding_info.line_number) +
 				`\n\`\`\``
 		);
