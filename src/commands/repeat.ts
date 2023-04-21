@@ -21,8 +21,7 @@ const usage = "usage: !repeat <positive number> <repeated word> <message>";
 
 const repeat_command: Command = {
 	name: "repeat",
-	description:
-		"repeats the second word a user inputted number of times concatenated with the rest of the message unaltered",
+	description: "repeats second argument for first argument number of times concatenated with the rest of the message",
 	usage: "repeat <number> <repeatee> <message>?",
 	async procedure(client: Client, message: Message, args: string[]): Promise<Message> {
 		return message.channel.send(repeat(args));
