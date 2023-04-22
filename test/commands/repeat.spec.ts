@@ -7,7 +7,7 @@ describe("repeat", () => {
 			it("1 arg", () => expect(repeat(["4"])).toEqual(usage));
 		});
 		describe("at least 2 args", () => {
-			it("negative number", () => expect(repeat([])).toEqual(usage));
+			it("negative number", () => expect(repeat(["-1", "bad"])).toEqual(usage));
 			it("no rest message", () =>
 				expect(repeat(["5", "repeatee"])).toEqual("repeatee repeatee repeatee repeatee repeatee"));
 			it("rest message", () =>
