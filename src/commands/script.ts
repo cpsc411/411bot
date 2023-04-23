@@ -69,7 +69,7 @@ const script: Command = {
 		} else {
 			const futureResults = scripts.map(caughtEval(client, message, args));
 			const results = await Promise.all(futureResults);
-			message.channel.send(results.map((value) => JSON.stringify(value)).join("\n"));
+			message.channel.send("```\n" + results.map((value) => JSON.stringify(value)).join("\n") + "\n```");
 		}
 	},
 };
