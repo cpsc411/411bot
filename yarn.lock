@@ -3083,6 +3083,11 @@ rxjs@^7.8.0:
   dependencies:
     tslib "^2.1.0"
 
+s-expression@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/s-expression/-/s-expression-3.1.1.tgz#1b385367bb4332acdfb951d4675fb75e8358c945"
+  integrity sha512-VMsW7sIvixXfIDmDll7XCePMYYY52UlUtA7OlFQUovqj3XtQ2UkZkjjAvnSFW8o+SbswzUEeCBMmpAx9LS3qrg==
+
 safe-buffer@~5.2.0:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
