@@ -8,14 +8,18 @@
 	},
 	"dependencies": {
 		"@ubccpsc310/bot-base": "1.1.0",
+		"cheerio": "^1.0.0-rc.12",
 		"discord.js": "^14.9.0",
 		"dotenv": "^16.0.3",
-		"s-expression": "^3.1.1"
+		"marked": "^4.3.0",
+		"s-expression": "^3.1.1",
+		"typescript": "5.0.4"
 	},
 	"devDependencies": {
 		"@tsconfig/node14": "^1.0.3",
 		"@types/dotenv": "^8.2.0",
 		"@types/jest": "^29.5.0",
+		"@types/marked": "^4.0.8",
 		"@types/node": "^18.15.11",
 		"@typescript-eslint/eslint-plugin": "^5.57.1",
 		"@typescript-eslint/parser": "^5.57.1",
@@ -27,8 +31,7 @@
 		"nodemon": "2.0.22",
 		"prettier": "^2.8.7",
 		"ts-jest": "^29.1.0",
-		"ts-node": "10.9.1",
-		"typescript": "5.0.4"
+		"ts-node": "10.9.1"
 	},
 	"scripts": {
 		"build": "tsc",
