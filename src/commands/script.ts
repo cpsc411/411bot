@@ -3,6 +3,7 @@ import {Element, load} from "cheerio";
 import {transpile} from "typescript";
 import {Command} from "@ubccpsc310/bot-base";
 import {Client, Message} from "discord.js";
+import {VM} from "vm2";
 
 const LANGUAGE_PREFIX = "language-";
 const VALID_LANGUAGES = ["js", "ts", "javascript", "typescript"];
@@ -46,14 +47,12 @@ const getScripts = (message: string): string[] =>
 
 const caughtEval =
 	(client: Client, message: Message, args: string[]) =>
-	(script: string): unknown => {
+	async (script: string): Promise<unknown> => {
 		try {
-			const result = eval(script);
-			if (result instanceof Promise) {
-				return result.catch(() => undefined);
-			} else {
-				return result;
-			}
+			return await new VM({
+				timeout: 50,
+				sandbox: {client, message, args},
+			}).run(script);
 		} catch {
 			return undefined;
 		}
@@ -61,14 +60,15 @@ const caughtEval =
 
 const script: Command = {
 	name: "script",
-	description: "",
+	description: "Executes js or ts codeblocks in a vm and pipes it back to discord",
 	usage: "script (<message>|<script>)*",
-	procedure(client, message, args): void {
+	async procedure(client, message, args) {
 		const scripts = getScripts(message.content);
 		if (scripts.length === 0) {
 			message.channel.send("No script found");
 		} else {
-			const results = scripts.map(caughtEval(client, message, args));
+			const futureResults = scripts.map(caughtEval(client, message, args));
+			const results = await Promise.all(futureResults);
 			message.channel.send(results.map((value) => JSON.stringify(value)).join("\n"));
 		}
 	},

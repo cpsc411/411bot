@@ -949,10 +949,10 @@
     "@typescript-eslint/types" "5.57.1"
     eslint-visitor-keys "^3.3.0"
 
-"@ubccpsc310/bot-base@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@ubccpsc310/bot-base/-/bot-base-1.1.0.tgz#532a7bbbcb889a252c45f2390bff106212bba1db"
-  integrity sha512-2hoNV9KUBwyBEA+++Na03/fjDlz+8Tzi9d/a+ce5/OYPquNZ/mGVI8I7KWz8/3V4nhq7IoS0bNmiZecIrp6tyw==
+"@ubccpsc310/bot-base@1.1.1-rc1":
+  version "1.1.1-rc1"
+  resolved "https://registry.yarnpkg.com/@ubccpsc310/bot-base/-/bot-base-1.1.1-rc1.tgz#44698522dc975166da9f324686b747f12434b116"
+  integrity sha512-85MtbVEAQl/HN3bsszaAr4KPFjIhiV02wSR66du85UdWwEVvGaiz4f2LvjaYzY1T8H80RRlryZnpkQw05mROMg==
   dependencies:
     debounce "^1.2.1"
     discord.js "14.9.0"
@@ -968,12 +968,12 @@ acorn-jsx@^5.3.2:
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.3.2.tgz#7ed5bb55908b3b2f1bc55c6af1653bada7f07937"
   integrity sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==
 
-acorn-walk@^8.1.1:
+acorn-walk@^8.1.1, acorn-walk@^8.2.0:
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/acorn-walk/-/acorn-walk-8.2.0.tgz#741210f2e2426454508853a2f44d0ab83b7f69c1"
   integrity sha512-k+iyHEuPgSw6SbuDpGQM+06HQUa04DZ3o+F6CSzXMvvI5KMvnaEqXe+YVe555R9nn6GPt404fos4wcgpw12SDA==
 
-acorn@^8.4.1, acorn@^8.8.0:
+acorn@^8.4.1, acorn@^8.7.0, acorn@^8.8.0:
   version "8.8.2"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.8.2.tgz#1b2f25db02af965399b9776b0c2c391276d37c4a"
   integrity sha512-xjIYgE8HBrkpd/sJqOGNspf8uHG+NOHGOw6a/Urj8taM2EXfdNAH2oFcPeIFfsv3+kz/mJrS5VuMqbNLjCa2vw==
@@ -3617,6 +3617,14 @@ v8-to-istanbul@^9.0.1:
     "@jridgewell/trace-mapping" "^0.3.12"
     "@types/istanbul-lib-coverage" "^2.0.1"
     convert-source-map "^1.6.0"
+
+vm2@^3.9.17:
+  version "3.9.17"
+  resolved "https://registry.yarnpkg.com/vm2/-/vm2-3.9.17.tgz#251b165ff8a0e034942b5181057305e39570aeab"
+  integrity sha512-AqwtCnZ/ERcX+AVj9vUsphY56YANXxRuqMb7GsDtAr0m0PcQX3u0Aj3KWiXM0YAHy7i6JEeHrwOnwXbGYgRpAw==
+  dependencies:
+    acorn "^8.7.0"
+    acorn-walk "^8.2.0"
 
 walker@^1.0.8:
   version "1.0.8"
