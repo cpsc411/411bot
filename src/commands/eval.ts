@@ -142,7 +142,7 @@ const eval_lc = (args: string[]): string => {
 		const rv = reduce_step(to_ast(parse(`(${args.join(" ")})`)));
 		if (rv[0]) {
 			// If there's still work to do, return a command that will evaluate the next step
-			return `eval! ${unparse(rv[1])}`;
+			return `!eval ${unparse(rv[1])}`;
 		}
 		// If there's no change, return a pretty printed result
 		else {
