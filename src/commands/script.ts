@@ -28,10 +28,14 @@ const forEachCodeBlock = (message: string, callback: (codeBlock: string) => unkn
 			if (VALID_LANGUAGES.includes(language.toLowerCase())) {
 				try {
 					callback($(element).text());
-				} catch {}
+				} catch {
+					// Suppress
+				}
 			}
 		});
-	} catch {}
+	} catch {
+		// Suppress
+	}
 };
 
 const collectScripts = (message: string): string[] => {
