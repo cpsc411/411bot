@@ -944,10 +944,10 @@
     "@typescript-eslint/types" "5.57.1"
     eslint-visitor-keys "^3.3.0"
 
-"@ubccpsc310/bot-base@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@ubccpsc310/bot-base/-/bot-base-1.1.0.tgz#532a7bbbcb889a252c45f2390bff106212bba1db"
-  integrity sha512-2hoNV9KUBwyBEA+++Na03/fjDlz+8Tzi9d/a+ce5/OYPquNZ/mGVI8I7KWz8/3V4nhq7IoS0bNmiZecIrp6tyw==
+"@ubccpsc310/bot-base@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@ubccpsc310/bot-base/-/bot-base-1.2.0.tgz#0163d31acee38ef7a358325adf13450ccbecdc16"
+  integrity sha512-BfDO0ZysP5ZJW0bGplp/pYVyoNNiT8zmcevtsILUGaNzRUpyd5+snBDTaIr+R9xLOVVjNg63yiGkaAjgJRZ8/Q==
   dependencies:
     debounce "^1.2.1"
     discord.js "14.9.0"

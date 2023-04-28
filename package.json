@@ -7,7 +7,7 @@
 		"node": ">= 16.14"
 	},
 	"dependencies": {
-		"@ubccpsc310/bot-base": "1.1.0",
+		"@ubccpsc310/bot-base": "1.2.0",
 		"discord.js": "^14.9.0",
 		"dotenv": "^16.0.3",
 		"s-expression": "^3.1.1"
