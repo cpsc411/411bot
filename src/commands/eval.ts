@@ -1,4 +1,4 @@
-import {Command} from "@ubccpsc310/bot-base";
+import {Command, getPrefix} from "@ubccpsc310/bot-base";
 import {Client, Message} from "discord.js";
 
 // modified from repeat
@@ -128,7 +128,7 @@ const unparse = (args: any): string => {
 	}
 };
 
-const eval_lc = (args: string[]): string => {
+const eval_lc = async (args: string[]): Promise<string> => {
 	try {
 		// documentation:
 		// its basically just a galois connection
@@ -142,7 +142,8 @@ const eval_lc = (args: string[]): string => {
 		const rv = reduce_step(to_ast(parse(`(${args.join(" ")})`)));
 		if (rv[0]) {
 			// If there's still work to do, return a command that will evaluate the next step
-			return `!eval ${unparse(rv[1])}`;
+			const prefix = await getPrefix();
+			return `${prefix}eval ${unparse(rv[1])}`;
 		}
 		// If there's no change, return a pretty printed result
 		else {
@@ -160,9 +161,9 @@ const usage = "u did a fucky wucky uwu 😳😳😳😳 pwease gib be a wegal wa
 const eval_command: Command = {
 	name: "eval",
 	description: "evaluates a lambda expression and eagerly prints intermediate steps",
-	usage: "!eval <L> where L ::= lambda <string> L | <string> | L L where strings have no spaces or brackets",
+	usage: "eval <L> where L ::= lambda <string> L | <string> | L L where strings have no spaces or brackets",
 	async procedure(client: Client, message: Message, args: string[]): Promise<Message> {
-		return message.channel.send(eval_lc(args));
+		return message.channel.send(await eval_lc(args));
 	},
 };
 
