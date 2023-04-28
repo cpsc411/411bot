@@ -6,7 +6,7 @@ jest.mock("@ubccpsc310/bot-base");
 
 describe("eval", () => {
 	describe("eval", () => {
-		const prefix: string = "!";
+		const prefix = "!";
 		beforeAll(async () => (getPrefix as MockedFn<typeof getPrefix>).mockImplementation(() => Promise.resolve("!")));
 		describe("irreducible", () => {
 			it("irreducible1", () => expect(eval_lc(["(hi", "there)"])).resolves.toEqual("hi there"));
